@@ -218,7 +218,8 @@ if ($dnsidentity.StartsWith("*")) {
 ') | Add-Content "c:\myfolder\SetupCertificate.ps1"
 }
 
-$workshopFilesUrl = 'https://www.dropbox.com/s/ubt7zdqvvlagzqx/Workshopfiles_AA.zip?dl=1'
+#$workshopFilesUrl = 'https://www.dropbox.com/s/ubt7zdqvvlagzqx/Workshopfiles_AA.zip?dl=1'
+$workshopFilesUrl = 'https://www.dropbox.com/s/3hk3xhzy0p8ngg3/Workshopfiles_AA.zip?dl=1'
 
 #1CF custom download of workshop files
 $downloadWorkshopFilesScript = 'c:\Demo\DownloadWorkshopFiles\DownloadWorkshopFiles.ps1'
@@ -232,7 +233,7 @@ New-Item -Path $workshopFilesFolder -ItemType Directory -ErrorAction Ignore |Out
 Download-File -sourceUrl $workshopFilesUrl -destinationFile $workshopFilesFile
 [Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.Filesystem") | Out-Null
 [System.IO.Compression.ZipFile]::ExtractToDirectory($workshopFilesFile, $workshopFilesFolder)
-git config --global user.email "extensionsv2training@gmail.com"
+git config --global user.email "qbsappv21@gmail.com"
 git config --global user.name "ExtensionV2Training"
 git config --global merge.tool p4merge
 git config --global mergeool.p4merge.path ''C:\Program Files\Perforce\p4merge.exe''

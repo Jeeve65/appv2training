@@ -25,7 +25,7 @@
         New-Item $Folder -itemtype directory -ErrorAction ignore | Out-Null
         if (!(Test-Path $Filename)) {
             #$sourceUrl = "https://go.microsoft.com/fwlink/?Linkid=852157"
-            $sourceUrl = "https://www.dropbox.com/s/xoaxk41u3mh73s3/VSCodeSetup-stable.exe?dl=1"
+            $sourceUrl = "https://www.dropbox.com/s/tsz6u3cmpvyfesw/VSCodeSetup-stable.exe?dl=1"
 
             Download-File -SourceUrl $sourceUrl -destinationFile $Filename
         }
@@ -37,7 +37,7 @@
         Log "Downloading samples"
         $Folder = "C:\DOWNLOAD"
         $Filename = "$Folder\samples.zip"
-        Download-File -sourceUrl "https://www.dropbox.com/s/ql2221rei6hwbag/AL-master.zip?dl=1" -destinationFile $filename
+        Download-File -sourceUrl "https://www.dropbox.com/s/5v9ajbtaff1ovni/AL-master.zip?dl=1" -destinationFile $filename
 
         Remove-Item -Path "$folder\AL-master" -Force -Recurse -ErrorAction Ignore | Out-null
         [Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.Filesystem") | Out-Null

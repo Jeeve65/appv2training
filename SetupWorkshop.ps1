@@ -23,7 +23,8 @@ try {
     #SQL 2014 
     #$sqlrepbuilderURL= "https://download.microsoft.com/download/2/E/1/2E1C4993-7B72-46A4-93FF-3C3DFBB2CEE0/ENU/x86/ReportBuilder3.msi"
     #SQL 2016
-    $sqlrepbuilderURL= "https://www.dropbox.com/s/qfjdpe9nb2xsnd5/ReportBuilder3.msi?dl=1"
+    #$sqlrepbuilderURL= "https://www.dropbox.com/s/qfjdpe9nb2xsnd5/ReportBuilder3.msi?dl=1"
+    $sqlrepbuilderURL= "https://www.dropbox.com/s/lotgh508g41b7iw/ReportBuilder3.msi?dl=1"
     
     $sqlrepbuilderPath = "c:\download\ReportBuilder3.msi"
 
@@ -32,7 +33,7 @@ try {
 
     #1CF Setup GIT
     Log "Installing GIT"
-    $gitUrl = "https://www.dropbox.com/s/t0ajl5m7hs07r0y/git.exe?dl=1"
+    $gitUrl = "https://www.dropbox.com/s/ed8ecv4qsfho8qz/git.exe?dl=1"
     $gitSavePath = "C:\Download\git.exe"
 
     Download-File -sourceUrl $gitUrl -destinationFile $gitSavePath
@@ -43,7 +44,7 @@ try {
     #1CF Setup P4Merge
 
     Log "Installing P4Merge"
-    $p4mUrl = "https://www.dropbox.com/s/xnmcp9ztfqv0dyy/p4vinst.exe?dl=1"
+    $p4mUrl = "https://www.dropbox.com/s/0ggsqvc8x27dqv1/p4vinst.exe?dl=1"
     $p4mSavePath = "C:\Download\p4m.exe"
 
     Download-File -sourceUrl $p4mUrl -destinationFile $p4mSavePath
@@ -53,7 +54,7 @@ try {
 
     #1CF Setup Chrome
     Log "Installing Chrome"
-    $chromeUrl = "https://www.dropbox.com/s/kiqfzeh9j1n9czb/ChromeSetup.exe?dl=1"
+    $chromeUrl = "https://www.dropbox.com/s/z6l2mnzhpet4qj3/ChromeSetup.exe?dl=1"
     $chromeSavePath = "C:\Download\chrome.exe"
 
     Download-File -sourceUrl $chromeUrl -destinationFile $chromeSavePath
@@ -77,7 +78,7 @@ try {
     Log "Configuring GIT login"
 
     $ENV:PATH=”$ENV:PATH;C:\Program Files\Git\bin”  #for git command to be recognized
-    git config --global user.email "extensionsv2training@gmail.com"
+    git config --global user.email "qbsappv21@gmail.com"
     git config --global user.name "ExtensionsV2Training"
     git config --global merge.tool p4merge
     git config --global mergeool.p4merge.path 'C:\Program Files (x86)\Perforce\p4merge.exe'	

@@ -18,7 +18,8 @@
     }
 
     # $BackupsUrl = "https://www.dropbox.com/s/ppaubskck4m1oue/DBBackups.zip?dl=1"
-    $BackupsUrl = "https://www.dropbox.com/s/50uxdtiqer916p1/DBBackups_October_12_2018_2.zip?dl=1"
+    # $BackupsUrl = "https://www.dropbox.com/s/50uxdtiqer916p1/DBBackups_October_12_2018_2.zip?dl=1"
+    $BackupsUrl = "https://www.dropbox.com/s/nvsiaeqmf903vru/DBBackups.zip?dl=1"
     $BackupFolder = "C:\DOWNLOAD\Backups"
     $Filename = "$BackupFolder\dbBackups.zip"
     if (Test-Path $BackupFolder) {
