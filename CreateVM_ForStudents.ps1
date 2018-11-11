@@ -17,7 +17,7 @@ $serverCount = 10
 $serverOffset = 0
 
 #Create VMs from 10 to 15
-#$vmName = "e2training21"
+#$vmName = "qbsappv2-1"
 #$serverCount = 6
 #$serverOffset = 0
 
@@ -52,7 +52,7 @@ Write-Host "$(timestamp) Creating Azure resource group servers"
     $Parameters.Add("vmSize", "Standard_D11_v2")
     $Parameters.Add("vmAdminUsername", "student")
     $Parameters.Add("navAdminUsername", "student")
-    $Parameters.Add("LicenseFileUri", "C:\PSScripts\Resource\Licenses\MSDyn365BC.flf")
+    $Parameters.Add("LicenseFileUri", "https://github.com/Jeeve65/appv2training/blob/master/MSDyn365BC.flf")
     $Parameters.Add("adminPassword", (ConvertTo-SecureString -String $pass -AsPlainText -Force))
     $Parameters.Add("navDockerImage", $navVersion)
     $Parameters.Add("count", $serverCount)
@@ -67,8 +67,8 @@ Write-Host "$(timestamp) Creating Azure resource group servers"
     #$Parameters.Add("style", "workshop")        
 
     # $resourceGroup | Test-AzureRmResourceGroupDeployment -TemplateUri $templateUri -TemplateParameterObject $Parameters
-    $resourceGroup | Test-AzureRmResourceGroupDeployment -TemplateFile $templateUri -TemplateParameterObject $Parameters
-    $resourceGroup | New-AzureRmResourceGroupDeployment -TemplateFile $templateUri -TemplateParameterObject $Parameters -Name $vmName -ErrorAction Ignore
+    $resourceGroup | Test-AzureRmResourceGroupDeployment -TemplateUri $templateUri -TemplateParameterObject $Parameters
+    $resourceGroup | New-AzureRmResourceGroupDeployment -TemplateUri $templateUri -TemplateParameterObject $Parameters -Name $vmName -ErrorAction Ignore
        
     #Restart-AzureRmVM -ResourceGroupName $resGroup -Name $vmName  
 
